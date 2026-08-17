@@ -25,6 +25,11 @@ spec:
       - name: mysql
         image: mamidalahemanchandra/mysql:v1
         imagePullPolicy: Always
+        startupProbe:
+          tcpSocket:
+            port: 3306
+          failureThreshold: 30
+          periodSeconds: 5
         livenessProbe:
           tcpSocket:
             port: 3306

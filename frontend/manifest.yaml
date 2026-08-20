@@ -98,10 +98,10 @@ spec:
         ports:
         - name: liveness-port
           containerPort: 8080
-          volumeMounts:
-          - name: nginx-config
-            mountPath: /etc/nginx/nginx.conf
-            subPath: nginx.conf
+        volumeMounts:
+        - name: nginx-config
+          mountPath: /etc/nginx/nginx.conf
+          subPath: nginx.conf
         livenessProbe:
           httpGet:
             path: /
